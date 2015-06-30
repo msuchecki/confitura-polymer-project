@@ -6,7 +6,12 @@
     </style>
     <template>
 
-        <google-map zoom="10"></google-map>
+        <google-map zoom="12"
+                    longitude="{{result.longitude}}"
+                    latitude="{{result.latitude}}"
+                    map="{{map}}"></google-map>
+
+        <google-map-search query="{{query}}" map="{{map}}" result="{{result}}"></google-map-search>
 
     </template>
 </dom-module>
@@ -14,7 +19,10 @@
 <script>
     (function () {
         Polymer({
-            is: 'my-map'
+            is: 'my-map',
+            properties: {
+                query:String
+            }
         });
     })();
 </script>
